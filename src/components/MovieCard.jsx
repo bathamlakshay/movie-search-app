@@ -1,13 +1,13 @@
-function MovieCard({title, year, poster, type}){
-
-    console.log("poster value:", poster)
-
+function MovieCard({title, year, poster, type, imdbID, onClick}){
 
 return (
-    <div className="bg-gray-900 rounded-xl overflow-hidden border border-gray-800">
+    <div className="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 cursor-pointer hover:scale-105 transition-transform"
+
+    onClick={() => onClick(imdbID)}>
+        
 
    {poster !== 'N/A' ? (
-    <img src={`https://wsrv.nl/?url=${poster}`} alt={title}className="w-full h-64 object-cover"
+    <img src={`https://wsrv.nl/?url=${poster}`} alt={title}className="w-full h-64 object-cover pointer-events-none"
     
 
     />
